@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.03em;
+        }
+
+        nav a:hover {
+            color: #00adb5;
+        }
+
+        .hero {
+            min-height: 70vh;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            color: #cbd5f5;
+        }
+
+        .hero-cta {
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #9ca3af;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #020617;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 8px 14px;
+            background: #00adb5;
+            color: white;
+            text-decoration: none;
+            border-radius: 999px;
+            font-size: 13px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+            color: #9ca3af;
+            margin-top: 40px;
+            border-top: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        .dark-mode {
+            background: #020617;
+            color: #e5e7eb;
+        }
+
+        .dark-mode header,
+        .dark-mode footer {
+            background: #000;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            padding: 6px 10px;
+            background: #00adb5;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🚗 Car Blog</h1>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#types">Types of Cars</a>
+            <a href="#features">Features</a>
+            <button class="toggle-btn" onclick="toggleMode()">🌙</button>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h2>Explore the Future of Cars</h2>
+            <p>Dive into stories, reviews, and insights about electric, hybrid, and performance cars from all around the world.</p>
+            <div class="hero-cta">
+                <a href="#about" class="btn">Learn About the Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="latest">
+            <h2 class="section-title">Latest Blogs</h2>
+            <p class="section-subtitle">Fresh stories, guides, and reviews straight from the automotive world.</p>
+
+            <div class="blog-posts">
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1549924231-f129b911e442">
+                    <div class="card-content">
+                        <h3>Electric Cars in 2026</h3>
+                        <p>The future is electric. Discover how EVs are changing the world and what to expect in the next decade.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+                    <div class="card-content">
+                        <h3>Top 5 Supercars</h3>
+                        <p>Experience speed, design, and luxury with our hand‑picked list of the world's most iconic supercars.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
+                    <div class="card-content">
+                        <h3>Self Driving Cars</h3>
+                        <p>From driver assistance to full autonomy, see how software is reshaping the driving experience.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf">
+                    <div class="card-content">
+                        <h3>Buying Your First Car</h3>
+                        <p>New or used? Petrol or electric? We break down what really matters when choosing your first ride.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About This Blog</h2>
+            <p class="section-subtitle">Why we write, what we cover, and who this blog is for.</p>
+            <p>
+                This blog is dedicated to everyone who loves cars – from daily commuters to hardcore petrolheads and
+                EV enthusiasts. We share detailed reviews, long‑term ownership experiences, buying guides, and
+                technology breakdowns in simple language so that anyone can understand the world under the hood.
+            </p>
+            <p style="margin-top:10px;">
+                Whether you are curious about the latest electric vehicles, want to compare sports cars, or simply
+                enjoy reading well‑written automotive stories, you will find something interesting here.
+            </p>
+        </section>
+
+        <section id="types">
+            <h2 class="section-title">Types of Cars</h2>
+            <p class="section-subtitle">Explore different categories and find the style that fits you best.</p>
+
+            <div class="blog-posts">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+                    <div class="card-content">
+                        <h3>Sedans</h3>
+                        <p>Comfortable, practical, and efficient. Perfect for families and everyday driving.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023">
+                    <div class="card-content">
+                        <h3>SUVs & Crossovers</h3>
+                        <p>High driving position, more space, and the confidence to tackle rougher roads.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
+                    <div class="card-content">
+                        <h3>Sports & Supercars</h3>
+                        <p>Built for performance and emotion with powerful engines and sharp handling.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1618804674171-977d3a6c0b56">
+                    <div class="card-content">
+                        <h3>Electric & Hybrid</h3>
+                        <p>Quiet, clean, and packed with technology – the future of personal mobility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2 class="section-title">Features We Love in Modern Cars</h2>
+            <p class="section-subtitle">From safety to convenience, these features make daily driving better.</p>
+
+            <div class="blog-posts">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Advanced Safety</h3>
+                        <p>Automatic emergency braking, lane‑keep assist, blind‑spot monitoring, and adaptive cruise
+                            control help prevent accidents and reduce fatigue on long journeys.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Infotainment & Connectivity</h3>
+                        <p>Large touchscreens, CarPlay/Android Auto, premium audio systems, and connected apps keep
+                            you entertained and informed wherever you go.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Efficiency & Performance Modes</h3>
+                        <p>Drive modes let you switch between eco, comfort, and sport settings, balancing fuel
+                            savings with fun whenever you want.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Comfort & Luxury</h3>
+                        <p>Heated and cooled seats, ambient lighting, panoramic roofs, and high‑quality materials
+                            transform every trip into a relaxed experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 Car Blog | Designed with ❤️</p>
+    </footer>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/service-worker.js")
+                    .then(reg => console.log("Service Worker registered", reg))
+                    .catch(err => console.log("Service Worker failed", err));
+            });
+        }
+    </script>
+
+</body>
+
+</html>
